@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: darkgray;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    /* text-align: center; */
+    /* width: 50vw; */
+}
+
+.left-header h1 {
+    font-size: 40px;
+    margin: 0;
+    /* width: 50vw; */
+}
+
+.left-header p {
+    font-size: 18px;
+    margin: 5px 0;
+    /* margin-top: 10px;
+    width: 50vw; */
+}
+
+.right-header ul {
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Displays the list items in a row */
+    gap: 10px; /* Adds space between the links */
+    text-decoration: none;
+}
+
+.right-header li {
+    padding: 5px 10px; /* Pads each list item for clickable area */
+    text-decoration: none;
+}
+
+.right-header a {
+    color: white;
+    text-decoration: none; /* Removes underline from links */
+    font-size: 16px; /* Sets font size for the links */
+}
+
+.right-header a:hover {
+    background-color: #34495e; /* Adds a hover effect for links */
+}
+
+.about-section, .skills-section, .projects-section, .resume-section, .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f3f3f3;
+
+}
+
+.about-section h2{
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    max-width: 600px;
+}
+
+.socials {
+    margin-top: 20px;
+}
+
+.social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    font-size: 30px;
+    color: #2c3e50; /* Default icon color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0077b5; /* Hover effect color (for LinkedIn, etc.) */
+}
+
+.social-icons a.github:hover {
+    color: #333; /* GitHub hover color */
+}
+
+.social-icons a.linkedin:hover {
+    color: #0077b5; /* LinkedIn hover color */
+}
+
+/* Education Section */
+.education-section {
+    background-color: white;
+    padding: 20px;
+    max-width: 10000px;
+    margin: 0 auto;
+}
+
+.education-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.education-timeline {
+    list-style: none;
+    position: relative;
+    padding-left: 0; /* Remove left padding as it is no longer needed */
+}
+
+.education-timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Center the line in the middle */
+    width: 2px;
+    background-color: #ccc;
+}
+
+.education-timeline li {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.education-timeline li:last-child {
+    margin-bottom: 0;
+}
+
+.education-timeline .year {
+    position: absolute;
+    left: 55%; /* Adjust the year position to the right of the line */
+    top: 50%; /* Ensure the year aligns vertically in the middle of the item */
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+.education-timeline .year::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px; /* Ensure the circle is next to the line */
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.education-timeline .description {
+    width: 40%; /* Define width for the description box */
+    position: relative;
+    left: 5%; /* Adjust the left position to move it next to the line */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.education-timeline .description strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.education-timeline .description p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Default state */
+.description {
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s, font-size 0.3s; /* Smooth transition */
+}
+
+/* Hover state */
+.description:hover {
+    background-color: skyblue;
+   /* color: #007BFF;  Change color on hover (blue in this case) */
+    font-size: 18px; /* Slightly increase font size */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 40px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.skills-section h2 span {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    position: relative;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffd700; 
+}
+
+/* Hover Effect */
+.skill-item:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Container */
+.skill-popup {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+/* Show Popup on Hover */
+.skill-item:hover .skill-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optional arrow on popup */
+.skill-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color:white;
+}
+
+.projects-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color:  #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.project a {
+    /* color: #007bff; */
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.resume-section h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin: 10px 0;
+}
+
+.resume-section .btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/* .contact-section {
+    background-color: #2B2E4A;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    width: 100vw; 
+}
+
+.contact-section h2 {
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin: 10px 0;
+} */
+
+
+#contact {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Layout for Contact Section */
+#contact_row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact_col {
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+}
+
+.form_col {
+    background-color: #f3f3f3;
+}
+
+.info_col {
+    background-color:  #2c3e50;
+    color: white;
+    padding-left: 30px;
+}
+
+.info_col h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.info_col p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #a0a0a0;
+}
+
+/* Contact Form Styling */
+form {
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+}
+
+.form-group input {
+    font-family: 'Arial', sans-serif; 
+    width: 48%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form input, form textarea {
+    font-family: 'Arial', sans-serif; 
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+}
+
+form textarea {
+    resize: none;
+    
+}
+
+form button {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff; /* Set the icon color to white */
+    font-size: 30px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100vw;
+}
+
+html {
+    scroll-behavior: smooth; /* This makes the scroll behavior smooth */
+}
+
